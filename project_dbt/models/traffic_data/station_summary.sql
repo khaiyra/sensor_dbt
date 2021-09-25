@@ -1,3 +1,4 @@
-select * 
-from {{ ref('my_first_dbt_model')}}
-where id = 1
+{{ config(materialized='table') }}
+
+SELECT ID, flow_99, flow_max, flow_median, flow_total, n_obs
+FROM sensor.StationSummary

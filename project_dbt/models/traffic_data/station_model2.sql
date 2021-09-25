@@ -1,3 +1,3 @@
 select * 
-from {{ ref('my_first_dbt_model')}}
-where id = 1
+from {{ ref('station_summary')}}
+where ID = 1
