@@ -19,3 +19,60 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: station_summary
+      description: 'Summary of station details'
+      columns: 
+        - name: ID
+          description: 'Unique identifier for a station'
+          tests:
+            -unique
+            -not_null
+        - name: flow_99
+          description: 'Value for flow99'
+        - name: flow_max
+          description: 'Value for max traffic flow'
+        - name: flow_median 
+          description: 'Value for median traffic flow'
+        - name: flow_total
+          description: 'Total traffic flow'
+        - name: n_obs
+          description: 'Value for n_obs'
+    
+    - name: richards
+      description: 'Timestamped Records for Richards Avenue'
+      columns: 
+        - name: timestamp
+          description: 'Record of time stamp'
+          tests:
+            -not_null
+        - name: flow1
+          description: 'Value for flow 1'
+        - name: flow2
+          description: 'Value for flow 2'
+        - name: flow3 
+          description: 'Flow3 value'
+        - name: occupancy1
+          description: 'Occupancy 1'
+        - name: occupancy2
+          description: 'Occupancy 2'
+        - name: occupancy3
+          description: 'Occupancy 3'
+
+    - name: stations
+    description: 'Table for Stations metadata'
+    columns:
+      - name: 'ID'
+        description: 'Unique identifier for a Station'
+        tests:
+          - not_null
+          - unique
+      - name: District
+        description: 'Station district name'
+      - name: Name
+        description: 'Station name'
+      - name: Lanes
+        description: 'Number of lanes for station'
+      - name: Type
+        description: 'Station type'
+
