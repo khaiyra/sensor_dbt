@@ -1,0 +1,1997 @@
+2021-09-23 21:17:53.350283 (MainThread): Running with dbt=0.19.0
+2021-09-23 21:17:53.486091 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-23 21:17:53.488015 (MainThread): Tracking: tracking
+2021-09-23 21:17:53.514026 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13ab1dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13ac1850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13acb040>]}
+2021-09-23 21:17:53.587418 (MainThread): Partial parsing not enabled
+2021-09-23 21:17:53.590704 (MainThread): Parsing macros/catalog.sql
+2021-09-23 21:17:53.596036 (MainThread): Parsing macros/adapters.sql
+2021-09-23 21:17:53.612735 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-23 21:17:53.621613 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-23 21:17:53.626344 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-23 21:17:53.659773 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-23 21:17:53.676790 (MainThread): Parsing macros/core.sql
+2021-09-23 21:17:53.686447 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-23 21:17:53.704482 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-23 21:17:53.708398 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-23 21:17:53.764958 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-23 21:17:53.835115 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-23 21:17:53.865132 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-23 21:17:53.870264 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-23 21:17:53.881912 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-23 21:17:53.902306 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-23 21:17:53.917017 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-23 21:17:53.936304 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-23 21:17:53.943920 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-23 21:17:53.946139 (MainThread): Parsing macros/etc/query.sql
+2021-09-23 21:17:53.948572 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-23 21:17:53.952038 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-23 21:17:53.967470 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-23 21:17:53.974512 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-23 21:17:53.977841 (MainThread): Parsing macros/adapters/common.sql
+2021-09-23 21:17:54.043934 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-23 21:17:54.046791 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-23 21:17:54.050941 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-23 21:17:54.053890 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-23 21:17:54.063931 (MainThread): Partial parsing not enabled
+2021-09-23 21:17:54.179531 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.207838 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:54.485462 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '50890c54-2aa5-4ceb-9d73-727d15d8601d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13f07460>]}
+2021-09-23 21:17:54.540302 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-09-23 21:17:54.541354 (MainThread): Found 2 models, 4 tests, 0 snapshots, 0 analyses, 140 macros, 0 operations, 0 seed files, 0 sources, 0 exposures
+2021-09-23 21:17:54.543150 (MainThread): 
+2021-09-23 21:17:54.543566 (MainThread): Acquiring new mysql connection "master".
+2021-09-23 21:17:54.546569 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "list_schemas".
+2021-09-23 21:17:54.562226 (ThreadPoolExecutor-0_0): Using mysql connection "list_schemas".
+2021-09-23 21:17:54.562398 (ThreadPoolExecutor-0_0): On list_schemas: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+2021-09-23 21:17:54.562485 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-09-23 21:17:54.602423 (ThreadPoolExecutor-0_0): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:54.607334 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status -1 in 0.04 seconds
+2021-09-23 21:17:54.610644 (ThreadPoolExecutor-0_0): On list_schemas: Close
+2021-09-23 21:17:54.611546 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "create__schema".
+2021-09-23 21:17:54.613561 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "create__schema".
+2021-09-23 21:17:54.613741 (ThreadPoolExecutor-0_0): Creating schema "`schema`"
+2021-09-23 21:17:54.622401 (ThreadPoolExecutor-0_0): Using mysql connection "create__schema".
+2021-09-23 21:17:54.622877 (ThreadPoolExecutor-0_0): On create__schema: BEGIN
+2021-09-23 21:17:54.623346 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state closed
+2021-09-23 21:17:54.655343 (ThreadPoolExecutor-0_0): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:54.656828 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status 0 in 0.03 seconds
+2021-09-23 21:17:54.656998 (ThreadPoolExecutor-0_0): Using mysql connection "create__schema".
+2021-09-23 21:17:54.657079 (ThreadPoolExecutor-0_0): On create__schema: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "create__schema"} */
+create schema if not exists `schema`
+2021-09-23 21:17:54.661413 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status 1 in 0.00 seconds
+2021-09-23 21:17:54.663119 (ThreadPoolExecutor-0_0): On create__schema: COMMIT
+2021-09-23 21:17:54.663389 (ThreadPoolExecutor-0_0): Using mysql connection "create__schema".
+2021-09-23 21:17:54.664957 (ThreadPoolExecutor-0_0): On create__schema: COMMIT
+2021-09-23 21:17:54.668788 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.669123 (ThreadPoolExecutor-0_0): On create__schema: Close
+2021-09-23 21:17:54.690261 (ThreadPoolExecutor-1_0): Acquiring new mysql connection "list_None_schema".
+2021-09-23 21:17:54.698596 (ThreadPoolExecutor-1_0): Using mysql connection "list_None_schema".
+2021-09-23 21:17:54.699039 (ThreadPoolExecutor-1_0): On list_None_schema: BEGIN
+2021-09-23 21:17:54.699217 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state closed
+2021-09-23 21:17:54.737525 (ThreadPoolExecutor-1_0): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:54.738798 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-23 21:17:54.738934 (ThreadPoolExecutor-1_0): Using mysql connection "list_None_schema".
+2021-09-23 21:17:54.739015 (ThreadPoolExecutor-1_0): On list_None_schema: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_None_schema"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'schema'
+  
+2021-09-23 21:17:54.741208 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-23 21:17:54.741600 (ThreadPoolExecutor-1_0): On list_None_schema: ROLLBACK
+2021-09-23 21:17:54.741996 (ThreadPoolExecutor-1_0): On list_None_schema: Close
+2021-09-23 21:17:54.742937 (MainThread): Using mysql connection "master".
+2021-09-23 21:17:54.743084 (MainThread): On master: BEGIN
+2021-09-23 21:17:54.743166 (MainThread): Opening a new connection, currently in state init
+2021-09-23 21:17:54.770615 (MainThread): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:54.775583 (MainThread): SQL status: Unknown cursor state/status 0 in 0.03 seconds
+2021-09-23 21:17:54.775874 (MainThread): On master: COMMIT
+2021-09-23 21:17:54.776146 (MainThread): Using mysql connection "master".
+2021-09-23 21:17:54.776308 (MainThread): On master: COMMIT
+2021-09-23 21:17:54.777096 (MainThread): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.777288 (MainThread): On master: Close
+2021-09-23 21:17:54.777722 (MainThread): 22:17:54 | Concurrency: 1 threads (target='dev')
+2021-09-23 21:17:54.777867 (MainThread): 22:17:54 | 
+2021-09-23 21:17:54.781326 (Thread-1): Began running node model.sensor_project.my_first_dbt_model
+2021-09-23 21:17:54.782578 (Thread-1): 22:17:54 | 1 of 2 START table model schema.my_first_dbt_model................... [RUN]
+2021-09-23 21:17:54.783403 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.785965 (Thread-1): Compiling model.sensor_project.my_first_dbt_model
+2021-09-23 21:17:54.806234 (Thread-1): Writing injected SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-23 21:17:54.807061 (Thread-1): finished collecting timing info
+2021-09-23 21:17:54.846139 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.846308 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `schema`.`my_first_dbt_model__dbt_tmp`
+2021-09-23 21:17:54.846395 (Thread-1): Opening a new connection, currently in state closed
+2021-09-23 21:17:54.873905 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:54.878550 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.03 seconds
+2021-09-23 21:17:54.882283 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.882479 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `schema`.`my_first_dbt_model__dbt_backup`
+2021-09-23 21:17:54.884868 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.903014 (Thread-1): Writing runtime SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-23 21:17:54.906937 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.907078 (Thread-1): On model.sensor_project.my_first_dbt_model: BEGIN
+2021-09-23 21:17:54.909345 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.909575 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.909717 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+
+  create  table
+    `schema`.`my_first_dbt_model__dbt_tmp`
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+
+2021-09-23 21:17:54.935910 (Thread-1): SQL status: Unknown cursor state/status 2 in 0.03 seconds
+2021-09-23 21:17:54.946653 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.946811 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+    drop table if exists `schema`.`my_first_dbt_model` cascade
+  
+2021-09-23 21:17:54.948816 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.950106 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.950230 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+    rename table `schema`.`my_first_dbt_model__dbt_tmp` to `schema`.`my_first_dbt_model`
+  
+2021-09-23 21:17:54.961049 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.01 seconds
+2021-09-23 21:17:54.970153 (Thread-1): On model.sensor_project.my_first_dbt_model: COMMIT
+2021-09-23 21:17:54.970455 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.970613 (Thread-1): On model.sensor_project.my_first_dbt_model: COMMIT
+2021-09-23 21:17:54.972260 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.979583 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:17:54.979754 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `schema`.`my_first_dbt_model__dbt_backup`
+2021-09-23 21:17:54.982869 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:54.987700 (Thread-1): finished collecting timing info
+2021-09-23 21:17:54.988050 (Thread-1): On model.sensor_project.my_first_dbt_model: Close
+2021-09-23 21:17:54.989121 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '50890c54-2aa5-4ceb-9d73-727d15d8601d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13f5b4c0>]}
+2021-09-23 21:17:54.990540 (Thread-1): 22:17:54 | 1 of 2 OK created table model schema.my_first_dbt_model.............. [Unknown cursor state/status 2 in 0.21s]
+2021-09-23 21:17:54.990734 (Thread-1): Finished running node model.sensor_project.my_first_dbt_model
+2021-09-23 21:17:54.991368 (Thread-1): Began running node model.sensor_project.my_second_dbt_model
+2021-09-23 21:17:54.992650 (Thread-1): 22:17:54 | 2 of 2 START view model schema.my_second_dbt_model................... [RUN]
+2021-09-23 21:17:54.993080 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:54.994967 (Thread-1): Compiling model.sensor_project.my_second_dbt_model
+2021-09-23 21:17:55.006078 (Thread-1): Writing injected SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-23 21:17:55.006653 (Thread-1): finished collecting timing info
+2021-09-23 21:17:55.032972 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.033177 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `schema`.`my_second_dbt_model__dbt_tmp`
+2021-09-23 21:17:55.033271 (Thread-1): Opening a new connection, currently in state closed
+2021-09-23 21:17:55.063657 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:55.068336 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-23 21:17:55.074909 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.075081 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `schema`.`my_second_dbt_model__dbt_backup`
+2021-09-23 21:17:55.076612 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.083861 (Thread-1): Writing runtime SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-23 21:17:55.086261 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.086775 (Thread-1): On model.sensor_project.my_second_dbt_model: BEGIN
+2021-09-23 21:17:55.087984 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.088190 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.088374 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+  create view `schema`.`my_second_dbt_model__dbt_tmp` as (
+    -- Use the `ref` function to select from other models
+
+select *
+from `schema`.`my_first_dbt_model`
+where id = 1
+  );
+
+2021-09-23 21:17:55.092222 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.095555 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.095735 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+    drop view if exists `schema`.`my_second_dbt_model` cascade
+  
+2021-09-23 21:17:55.098058 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.100270 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.100861 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+    rename table `schema`.`my_second_dbt_model__dbt_tmp` to `schema`.`my_second_dbt_model`
+  
+2021-09-23 21:17:55.106351 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.01 seconds
+2021-09-23 21:17:55.110603 (Thread-1): On model.sensor_project.my_second_dbt_model: COMMIT
+2021-09-23 21:17:55.110981 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.111278 (Thread-1): On model.sensor_project.my_second_dbt_model: COMMIT
+2021-09-23 21:17:55.112615 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.118805 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:17:55.120103 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `schema`.`my_second_dbt_model__dbt_backup`
+2021-09-23 21:17:55.125160 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.132496 (Thread-1): finished collecting timing info
+2021-09-23 21:17:55.134257 (Thread-1): On model.sensor_project.my_second_dbt_model: Close
+2021-09-23 21:17:55.136359 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '50890c54-2aa5-4ceb-9d73-727d15d8601d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13f83610>]}
+2021-09-23 21:17:55.138652 (Thread-1): 22:17:55 | 2 of 2 OK created view model schema.my_second_dbt_model.............. [Unknown cursor state/status 0 in 0.14s]
+2021-09-23 21:17:55.139023 (Thread-1): Finished running node model.sensor_project.my_second_dbt_model
+2021-09-23 21:17:55.141820 (MainThread): Acquiring new mysql connection "master".
+2021-09-23 21:17:55.145321 (MainThread): Using mysql connection "master".
+2021-09-23 21:17:55.145817 (MainThread): On master: BEGIN
+2021-09-23 21:17:55.146049 (MainThread): Opening a new connection, currently in state closed
+2021-09-23 21:17:55.184614 (MainThread): new_auth_plugin: caching_sha2_password
+2021-09-23 21:17:55.185967 (MainThread): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-23 21:17:55.188599 (MainThread): On master: COMMIT
+2021-09-23 21:17:55.188949 (MainThread): Using mysql connection "master".
+2021-09-23 21:17:55.189172 (MainThread): On master: COMMIT
+2021-09-23 21:17:55.190036 (MainThread): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-23 21:17:55.190211 (MainThread): On master: Close
+2021-09-23 21:17:55.190699 (MainThread): 22:17:55 | 
+2021-09-23 21:17:55.190951 (MainThread): 22:17:55 | Finished running 1 table model, 1 view model in 0.65s.
+2021-09-23 21:17:55.191116 (MainThread): Connection 'master' was properly closed.
+2021-09-23 21:17:55.191308 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-23 21:17:55.244522 (MainThread): 
+2021-09-23 21:17:55.244821 (MainThread): Completed successfully
+2021-09-23 21:17:55.245187 (MainThread): 
+Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+2021-09-23 21:17:55.245472 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13e98af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13f5b220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffa13f5b4c0>]}
+2021-09-23 21:17:55.245713 (MainThread): Flushing usage events
+2021-09-23 21:18:20.904755 (MainThread): Running with dbt=0.19.0
+2021-09-23 21:18:21.035248 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-23 21:18:21.038454 (MainThread): Tracking: tracking
+2021-09-23 21:18:21.062471 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cbb03a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cbcb910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cbd3100>]}
+2021-09-23 21:18:21.109018 (MainThread): Partial parsing not enabled
+2021-09-23 21:18:21.114868 (MainThread): Parsing macros/catalog.sql
+2021-09-23 21:18:21.124372 (MainThread): Parsing macros/adapters.sql
+2021-09-23 21:18:21.153727 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-23 21:18:21.157387 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-23 21:18:21.160119 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-23 21:18:21.192150 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-23 21:18:21.200494 (MainThread): Parsing macros/core.sql
+2021-09-23 21:18:21.208671 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-23 21:18:21.221361 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-23 21:18:21.224219 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-23 21:18:21.253794 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-23 21:18:21.303390 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-23 21:18:21.345820 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-23 21:18:21.349446 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-23 21:18:21.358139 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-23 21:18:21.377572 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-23 21:18:21.392042 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-23 21:18:21.400929 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-23 21:18:21.409769 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-23 21:18:21.412156 (MainThread): Parsing macros/etc/query.sql
+2021-09-23 21:18:21.414190 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-23 21:18:21.416543 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-23 21:18:21.429252 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-23 21:18:21.434359 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-23 21:18:21.439418 (MainThread): Parsing macros/adapters/common.sql
+2021-09-23 21:18:21.506490 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-23 21:18:21.512993 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-23 21:18:21.517485 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-23 21:18:21.523145 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-23 21:18:21.540617 (MainThread): Partial parsing not enabled
+2021-09-23 21:18:21.639377 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:18:21.669158 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:18:21.939495 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f9b3fab7-6e18-4ea6-b538-c434247036d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cb9d1f0>]}
+2021-09-23 21:18:21.991356 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-09-23 21:18:21.991805 (MainThread): Found 2 models, 4 tests, 0 snapshots, 0 analyses, 140 macros, 0 operations, 0 seed files, 0 sources, 0 exposures
+2021-09-23 21:18:21.992844 (MainThread): 
+2021-09-23 21:18:21.993256 (MainThread): Acquiring new mysql connection "master".
+2021-09-23 21:18:22.004322 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "list_None_schema".
+2021-09-23 21:18:22.018381 (ThreadPoolExecutor-0_0): Using mysql connection "list_None_schema".
+2021-09-23 21:18:22.018601 (ThreadPoolExecutor-0_0): On list_None_schema: BEGIN
+2021-09-23 21:18:22.018764 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-09-23 21:18:22.054890 (ThreadPoolExecutor-0_0): new_auth_plugin: caching_sha2_password
+2021-09-23 21:18:22.057337 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-23 21:18:22.057720 (ThreadPoolExecutor-0_0): Using mysql connection "list_None_schema".
+2021-09-23 21:18:22.057888 (ThreadPoolExecutor-0_0): On list_None_schema: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_None_schema"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'schema'
+  
+2021-09-23 21:18:22.059758 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-23 21:18:22.069864 (ThreadPoolExecutor-0_0): On list_None_schema: ROLLBACK
+2021-09-23 21:18:22.070484 (ThreadPoolExecutor-0_0): On list_None_schema: Close
+2021-09-23 21:18:22.071799 (MainThread): 22:18:22 | Concurrency: 1 threads (target='dev')
+2021-09-23 21:18:22.072111 (MainThread): 22:18:22 | 
+2021-09-23 21:18:22.074227 (Thread-1): Began running node model.sensor_project.my_first_dbt_model
+2021-09-23 21:18:22.074618 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-23 21:18:22.076713 (Thread-1): Compiling model.sensor_project.my_first_dbt_model
+2021-09-23 21:18:22.100775 (Thread-1): Writing injected SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-23 21:18:22.101376 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.101710 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.102205 (Thread-1): Finished running node model.sensor_project.my_first_dbt_model
+2021-09-23 21:18:22.102730 (Thread-1): Began running node model.sensor_project.my_second_dbt_model
+2021-09-23 21:18:22.103053 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-23 21:18:22.103228 (Thread-1): Compiling model.sensor_project.my_second_dbt_model
+2021-09-23 21:18:22.122192 (Thread-1): Writing injected SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-23 21:18:22.123028 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.123553 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.124638 (Thread-1): Finished running node model.sensor_project.my_second_dbt_model
+2021-09-23 21:18:22.125103 (Thread-1): Began running node test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-23 21:18:22.126069 (Thread-1): Acquiring new mysql connection "test.sensor_project.not_null_my_first_dbt_model_id".
+2021-09-23 21:18:22.126280 (Thread-1): Compiling test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-23 21:18:22.150912 (Thread-1): Writing injected SQL for node "test.sensor_project.not_null_my_first_dbt_model_id"
+2021-09-23 21:18:22.151721 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.152223 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.152664 (Thread-1): Finished running node test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-23 21:18:22.152807 (Thread-1): Began running node test.sensor_project.unique_my_first_dbt_model_id
+2021-09-23 21:18:22.153056 (Thread-1): Acquiring new mysql connection "test.sensor_project.unique_my_first_dbt_model_id".
+2021-09-23 21:18:22.153448 (Thread-1): Compiling test.sensor_project.unique_my_first_dbt_model_id
+2021-09-23 21:18:22.162164 (Thread-1): Writing injected SQL for node "test.sensor_project.unique_my_first_dbt_model_id"
+2021-09-23 21:18:22.162823 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.163192 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.163788 (Thread-1): Finished running node test.sensor_project.unique_my_first_dbt_model_id
+2021-09-23 21:18:22.163980 (Thread-1): Began running node test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-23 21:18:22.164589 (Thread-1): Acquiring new mysql connection "test.sensor_project.not_null_my_second_dbt_model_id".
+2021-09-23 21:18:22.164792 (Thread-1): Compiling test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-23 21:18:22.175073 (Thread-1): Writing injected SQL for node "test.sensor_project.not_null_my_second_dbt_model_id"
+2021-09-23 21:18:22.175612 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.175888 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.176260 (Thread-1): Finished running node test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-23 21:18:22.176434 (Thread-1): Began running node test.sensor_project.unique_my_second_dbt_model_id
+2021-09-23 21:18:22.176817 (Thread-1): Acquiring new mysql connection "test.sensor_project.unique_my_second_dbt_model_id".
+2021-09-23 21:18:22.176927 (Thread-1): Compiling test.sensor_project.unique_my_second_dbt_model_id
+2021-09-23 21:18:22.189895 (Thread-1): Writing injected SQL for node "test.sensor_project.unique_my_second_dbt_model_id"
+2021-09-23 21:18:22.190386 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.190651 (Thread-1): finished collecting timing info
+2021-09-23 21:18:22.191297 (Thread-1): Finished running node test.sensor_project.unique_my_second_dbt_model_id
+2021-09-23 21:18:22.192337 (MainThread): Connection 'master' was properly closed.
+2021-09-23 21:18:22.192481 (MainThread): Connection 'test.sensor_project.unique_my_second_dbt_model_id' was properly closed.
+2021-09-23 21:18:22.242236 (MainThread): 22:18:22 | Done.
+2021-09-23 21:18:22.247238 (MainThread): Acquiring new mysql connection "generate_catalog".
+2021-09-23 21:18:22.247408 (MainThread): 22:18:22 | Building catalog
+2021-09-23 21:18:22.271771 (ThreadPoolExecutor-1_0): Acquiring new mysql connection "schema".
+2021-09-23 21:18:22.272079 (ThreadPoolExecutor-1_0): Getting table schema for relation `schema`.`my_first_dbt_model`
+2021-09-23 21:18:22.282453 (ThreadPoolExecutor-1_0): Using mysql connection "schema".
+2021-09-23 21:18:22.282784 (ThreadPoolExecutor-1_0): On schema: BEGIN
+2021-09-23 21:18:22.283153 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state init
+2021-09-23 21:18:22.319701 (ThreadPoolExecutor-1_0): new_auth_plugin: caching_sha2_password
+2021-09-23 21:18:22.321449 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-23 21:18:22.321885 (ThreadPoolExecutor-1_0): Using mysql connection "schema".
+2021-09-23 21:18:22.322105 (ThreadPoolExecutor-1_0): On schema: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "schema"} */
+
+        show columns from schema.my_first_dbt_model
+    
+2021-09-23 21:18:22.325250 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-23 21:18:22.330324 (ThreadPoolExecutor-1_0): Getting table schema for relation `schema`.`my_second_dbt_model`
+2021-09-23 21:18:22.334214 (ThreadPoolExecutor-1_0): Using mysql connection "schema".
+2021-09-23 21:18:22.334841 (ThreadPoolExecutor-1_0): On schema: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "schema"} */
+
+        show columns from schema.my_second_dbt_model
+    
+2021-09-23 21:18:22.338380 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-23 21:18:22.339701 (ThreadPoolExecutor-1_0): On schema: ROLLBACK
+2021-09-23 21:18:22.340108 (ThreadPoolExecutor-1_0): On schema: Close
+2021-09-23 21:18:22.386382 (MainThread): 22:18:22 | Catalog written to /Users/khaiyra/Documents/10academy/week11/project_dbt/target/catalog.json
+2021-09-23 21:18:22.386725 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cbb03a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cf79820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb91cf797c0>]}
+2021-09-23 21:18:22.386973 (MainThread): Flushing usage events
+2021-09-23 21:18:23.681535 (MainThread): Connection 'generate_catalog' was properly closed.
+2021-09-23 21:18:23.681765 (MainThread): Connection 'schema' was properly closed.
+2021-09-23 21:18:35.665972 (MainThread): Running with dbt=0.19.0
+2021-09-23 21:18:35.806818 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-23 21:18:35.808781 (MainThread): Tracking: tracking
+2021-09-23 21:18:35.831817 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b48bcbd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b48be6880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b48bee070>]}
+2021-09-23 21:18:35.837512 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-23 21:18:35.837948 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-23 21:18:35.838145 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-25 08:18:15.271817 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:18:15.356897 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-25 08:18:15.359594 (MainThread): Tracking: tracking
+2021-09-25 08:18:15.378501 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fac1610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fadd8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fae70d0>]}
+2021-09-25 08:18:15.418208 (MainThread): Partial parsing not enabled
+2021-09-25 08:18:15.421116 (MainThread): Parsing macros/catalog.sql
+2021-09-25 08:18:15.425321 (MainThread): Parsing macros/adapters.sql
+2021-09-25 08:18:15.437900 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:18:15.441478 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:18:15.443015 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:18:15.467585 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:18:15.474340 (MainThread): Parsing macros/core.sql
+2021-09-25 08:18:15.479155 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 08:18:15.490404 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:18:15.492828 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:18:15.515369 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:18:15.554801 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:18:15.579036 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 08:18:15.583217 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 08:18:15.591730 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 08:18:15.612819 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 08:18:15.627325 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 08:18:15.637003 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 08:18:15.643479 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 08:18:15.644903 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 08:18:15.646344 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 08:18:15.648433 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 08:18:15.659696 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 08:18:15.662840 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 08:18:15.665390 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 08:18:15.716586 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 08:18:15.719528 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 08:18:15.722489 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 08:18:15.724952 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 08:18:15.734160 (MainThread): Partial parsing not enabled
+2021-09-25 08:18:15.811060 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 08:18:15.836115 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 08:18:15.848596 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 08:18:15.862365 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 08:18:15.874848 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fb33be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fd86490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc23fd8c460>]}
+2021-09-25 08:18:15.875099 (MainThread): Flushing usage events
+2021-09-25 08:18:17.464235 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-25 08:18:17.464427 (MainThread): Encountered an error:
+2021-09-25 08:18:17.464581 (MainThread): Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+2021-09-25 08:18:17.471816 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 4, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 62
+  ------------------------------
+  59 |           description: 'Occupancy 3'
+  60 | 
+  61 |     - name: stations
+  62 |     description: 'Table for Stations metadata'
+  63 |     columns:
+  64 |       - name: 'ID'
+  65 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 4, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+
+2021-09-25 08:18:30.371991 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:18:30.463356 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-25 08:18:30.465046 (MainThread): Tracking: tracking
+2021-09-25 08:18:30.488380 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ebcce20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ebe7970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ebee160>]}
+2021-09-25 08:18:30.539584 (MainThread): Partial parsing not enabled
+2021-09-25 08:18:30.542348 (MainThread): Parsing macros/catalog.sql
+2021-09-25 08:18:30.547005 (MainThread): Parsing macros/adapters.sql
+2021-09-25 08:18:30.563704 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:18:30.567292 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:18:30.568435 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:18:30.599527 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:18:30.606599 (MainThread): Parsing macros/core.sql
+2021-09-25 08:18:30.612028 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 08:18:30.622520 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:18:30.624627 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:18:30.645381 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:18:30.691144 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:18:30.757526 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 08:18:30.759685 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 08:18:30.766952 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 08:18:30.785080 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 08:18:30.794497 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 08:18:30.802607 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 08:18:30.809725 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 08:18:30.810964 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 08:18:30.812498 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 08:18:30.814581 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 08:18:30.826202 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 08:18:30.828707 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 08:18:30.830969 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 08:18:30.887503 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 08:18:30.889856 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 08:18:30.891969 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 08:18:30.894179 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 08:18:30.904764 (MainThread): Partial parsing not enabled
+2021-09-25 08:18:30.988382 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 08:18:31.013045 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 08:18:31.025258 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 08:18:31.037299 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 08:18:31.049036 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ec3f790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ed929d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa79ed8bc10>]}
+2021-09-25 08:18:31.049317 (MainThread): Flushing usage events
+2021-09-25 08:18:32.471241 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-25 08:18:32.471448 (MainThread): Encountered an error:
+2021-09-25 08:18:32.471657 (MainThread): Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+2021-09-25 08:18:32.476312 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 4, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 62
+  ------------------------------
+  59 |           description: 'Occupancy 3'
+  60 | 
+  61 |     - name: stations
+  62 |     description: 'Table for Stations metadata'
+  63 |     columns:
+  64 |       - name: 'ID'
+  65 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 4, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/generate.py", line 213, in run
+    compile_results = CompileTask.run(self)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+
+2021-09-25 08:19:00.065271 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:19:00.157110 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-25 08:19:00.158397 (MainThread): Tracking: tracking
+2021-09-25 08:19:00.172562 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093c0340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093db8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093e40a0>]}
+2021-09-25 08:19:00.179080 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-25 08:19:00.179488 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-25 08:19:00.179687 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-25 08:19:00.180504 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093e4d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093e4d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7093e46d0>]}
+2021-09-25 08:19:00.180789 (MainThread): Flushing usage events
+2021-09-25 08:19:01.551099 (MainThread): Encountered an error:
+2021-09-25 08:19:01.551311 (MainThread): [Errno 48] Address already in use
+2021-09-25 08:19:01.554865 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+2021-09-25 08:28:29.735035 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:28:29.836560 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-25 08:28:29.837912 (MainThread): Tracking: tracking
+2021-09-25 08:28:29.855592 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dbc1730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dbdd9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dbe4190>]}
+2021-09-25 08:28:29.916201 (MainThread): Partial parsing not enabled
+2021-09-25 08:28:29.918544 (MainThread): Parsing macros/catalog.sql
+2021-09-25 08:28:29.926488 (MainThread): Parsing macros/adapters.sql
+2021-09-25 08:28:29.950668 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:28:29.953518 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:28:29.954930 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:28:29.979231 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:28:29.985462 (MainThread): Parsing macros/core.sql
+2021-09-25 08:28:29.990810 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 08:28:30.004635 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:28:30.009243 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:28:30.030390 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:28:30.079467 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:28:30.126819 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 08:28:30.131328 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 08:28:30.138956 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 08:28:30.158853 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 08:28:30.176446 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 08:28:30.193615 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 08:28:30.201023 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 08:28:30.202805 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 08:28:30.204568 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 08:28:30.208671 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 08:28:30.221884 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 08:28:30.225723 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 08:28:30.228369 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 08:28:30.399220 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 08:28:30.404289 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 08:28:30.406785 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 08:28:30.410987 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 08:28:30.421798 (MainThread): Partial parsing not enabled
+2021-09-25 08:28:30.531490 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 08:28:30.571852 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 08:28:30.599209 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 08:28:30.613847 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 08:28:30.634563 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dc35790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dd889d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb51dd82c10>]}
+2021-09-25 08:28:30.635783 (MainThread): Flushing usage events
+2021-09-25 08:28:31.894596 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-25 08:28:31.894794 (MainThread): Encountered an error:
+2021-09-25 08:28:31.894938 (MainThread): Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+2021-09-25 08:28:31.901614 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 4, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 62
+  ------------------------------
+  59 |           description: 'Occupancy 3'
+  60 | 
+  61 |     - name: stations
+  62 |     description: 'Table for Stations metadata'
+  63 |     columns:
+  64 |       - name: 'ID'
+  65 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 4, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+
+2021-09-25 08:28:52.484554 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:28:52.567539 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-25 08:28:52.569239 (MainThread): Tracking: tracking
+2021-09-25 08:28:52.584750 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e43b1dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e43cb970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e43d2160>]}
+2021-09-25 08:28:52.616954 (MainThread): Partial parsing not enabled
+2021-09-25 08:28:52.618333 (MainThread): Parsing macros/catalog.sql
+2021-09-25 08:28:52.621859 (MainThread): Parsing macros/adapters.sql
+2021-09-25 08:28:52.634009 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:28:52.637724 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:28:52.640682 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:28:52.663800 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:28:52.671157 (MainThread): Parsing macros/core.sql
+2021-09-25 08:28:52.675597 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 08:28:52.685781 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 08:28:52.688463 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 08:28:52.712695 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 08:28:52.751606 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 08:28:52.776274 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 08:28:52.778791 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 08:28:52.785744 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 08:28:52.802437 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 08:28:52.810285 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 08:28:52.817630 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 08:28:52.823092 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 08:28:52.824136 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 08:28:52.825333 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 08:28:52.827243 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 08:28:52.837954 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 08:28:52.840194 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 08:28:52.842203 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 08:28:52.892662 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 08:28:52.894783 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 08:28:52.897258 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 08:28:52.899242 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 08:28:52.908055 (MainThread): Partial parsing not enabled
+2021-09-25 08:28:52.995589 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 08:28:53.024332 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 08:28:53.037703 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 08:28:53.049940 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 08:28:53.061518 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e4424790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e4575a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e4571c10>]}
+2021-09-25 08:28:53.061924 (MainThread): Flushing usage events
+2021-09-25 08:28:54.211888 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-25 08:28:54.214238 (MainThread): Encountered an error:
+2021-09-25 08:28:54.214459 (MainThread): Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+2021-09-25 08:28:54.217550 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 4, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 62
+  ------------------------------
+  59 |           description: 'Occupancy 3'
+  60 | 
+  61 |     - name: stations
+  62 |     description: 'Table for Stations metadata'
+  63 |     columns:
+  64 |       - name: 'ID'
+  65 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 4, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 62, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/generate.py", line 213, in run
+    compile_results = CompileTask.run(self)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: example/schema.yml - Runtime Error
+    Syntax error near line 62
+    ------------------------------
+    59 |           description: 'Occupancy 3'
+    60 | 
+    61 |     - name: stations
+    62 |     description: 'Table for Stations metadata'
+    63 |     columns:
+    64 |       - name: 'ID'
+    65 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 4, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 62, column 5
+
+2021-09-25 08:29:05.241856 (MainThread): Running with dbt=0.19.0
+2021-09-25 08:29:05.327316 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-25 08:29:05.329663 (MainThread): Tracking: tracking
+2021-09-25 08:29:05.349122 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63c0f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63da940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63e3130>]}
+2021-09-25 08:29:05.356174 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-25 08:29:05.356677 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-25 08:29:05.356998 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-25 08:29:05.358269 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63e3e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63e3dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb5e63e3760>]}
+2021-09-25 08:29:05.358848 (MainThread): Flushing usage events
+2021-09-25 08:29:06.545868 (MainThread): Encountered an error:
+2021-09-25 08:29:06.546070 (MainThread): [Errno 48] Address already in use
+2021-09-25 08:29:06.549048 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+2021-09-25 11:26:44.281459 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:26:44.369356 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-25 11:26:44.372637 (MainThread): Tracking: tracking
+2021-09-25 11:26:44.389936 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbac1d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbadc8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbae40a0>]}
+2021-09-25 11:26:44.420021 (MainThread): Partial parsing not enabled
+2021-09-25 11:26:44.422634 (MainThread): Parsing macros/catalog.sql
+2021-09-25 11:26:44.426976 (MainThread): Parsing macros/adapters.sql
+2021-09-25 11:26:44.438689 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:26:44.442111 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:26:44.443499 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:26:44.466800 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:26:44.474550 (MainThread): Parsing macros/core.sql
+2021-09-25 11:26:44.480178 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 11:26:44.491231 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:26:44.493652 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:26:44.515903 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:26:44.557137 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:26:44.583474 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 11:26:44.586052 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 11:26:44.594329 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 11:26:44.610986 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 11:26:44.619256 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 11:26:44.627303 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 11:26:44.633619 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 11:26:44.635046 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 11:26:44.636901 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 11:26:44.639622 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 11:26:44.651114 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 11:26:44.653750 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 11:26:44.657239 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 11:26:44.710336 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 11:26:44.714050 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 11:26:44.716413 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 11:26:44.718607 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 11:26:44.728166 (MainThread): Partial parsing not enabled
+2021-09-25 11:26:44.807020 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 11:26:44.831590 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 11:26:44.843569 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 11:26:44.857250 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 11:26:44.875789 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbb310a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbca9ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4bbca9b20>]}
+2021-09-25 11:26:44.876092 (MainThread): Flushing usage events
+2021-09-25 11:26:44.885411 (MainThread): The 'warn' method is deprecated, use 'warning' instead
+2021-09-25 11:26:44.885573 (MainThread): Error sending message, disabling tracking
+2021-09-25 11:26:44.885811 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-25 11:26:44.886015 (MainThread): Encountered an error:
+2021-09-25 11:26:44.886167 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-25 11:26:44.892437 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-25 11:27:25.817978 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:27:25.985352 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-25 11:27:26.000353 (MainThread): Tracking: tracking
+2021-09-25 11:27:26.029391 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff8813c1af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff8813dc910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff8813e4100>]}
+2021-09-25 11:27:26.076524 (MainThread): Partial parsing not enabled
+2021-09-25 11:27:26.078912 (MainThread): Parsing macros/catalog.sql
+2021-09-25 11:27:26.084200 (MainThread): Parsing macros/adapters.sql
+2021-09-25 11:27:26.103784 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:27:26.111061 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:27:26.113441 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:27:26.159288 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:27:26.171456 (MainThread): Parsing macros/core.sql
+2021-09-25 11:27:26.181033 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 11:27:26.203298 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:27:26.208420 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:27:26.248015 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:27:26.323475 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:27:26.372941 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 11:27:26.376726 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 11:27:26.390051 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 11:27:26.423286 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 11:27:26.438759 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 11:27:26.454137 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 11:27:26.465759 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 11:27:26.468022 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 11:27:26.470751 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 11:27:26.475402 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 11:27:26.497186 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 11:27:26.501359 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 11:27:26.506186 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 11:27:26.604028 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 11:27:26.608548 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 11:27:26.612051 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 11:27:26.616732 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 11:27:26.633970 (MainThread): Partial parsing not enabled
+2021-09-25 11:27:26.763395 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 11:27:26.804781 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 11:27:26.829982 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 11:27:26.853740 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 11:27:26.876143 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff88144c6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff8815a9b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff8815a9bb0>]}
+2021-09-25 11:27:26.876526 (MainThread): Flushing usage events
+2021-09-25 11:27:57.133527 (MainThread): The 'warn' method is deprecated, use 'warning' instead
+2021-09-25 11:27:57.135075 (MainThread): Error sending message, disabling tracking
+2021-09-25 11:27:57.136950 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-25 11:27:57.137226 (MainThread): Encountered an error:
+2021-09-25 11:27:57.137371 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-25 11:27:57.143251 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/generate.py", line 213, in run
+    compile_results = CompileTask.run(self)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-25 11:28:20.889928 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:28:20.995963 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-25 11:28:20.997125 (MainThread): Tracking: tracking
+2021-09-25 11:28:21.017621 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133bc0970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133bdb850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133be4040>]}
+2021-09-25 11:28:21.025393 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-25 11:28:21.025895 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-25 11:28:21.026112 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-25 11:28:21.027324 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133be4d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133be4cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8133be4670>]}
+2021-09-25 11:28:21.027779 (MainThread): Flushing usage events
+2021-09-25 11:28:21.045379 (MainThread): The 'warn' method is deprecated, use 'warning' instead
+2021-09-25 11:28:21.045581 (MainThread): Error sending message, disabling tracking
+2021-09-25 11:28:21.045947 (MainThread): Encountered an error:
+2021-09-25 11:28:21.046109 (MainThread): [Errno 48] Address already in use
+2021-09-25 11:28:21.048404 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+2021-09-25 11:44:59.004378 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:44:59.112141 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-25 11:44:59.114749 (MainThread): Tracking: tracking
+2021-09-25 11:44:59.140964 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378bc24c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378bdd970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378be4160>]}
+2021-09-25 11:44:59.170810 (MainThread): Partial parsing not enabled
+2021-09-25 11:44:59.172732 (MainThread): Parsing macros/catalog.sql
+2021-09-25 11:44:59.179038 (MainThread): Parsing macros/adapters.sql
+2021-09-25 11:44:59.191210 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:44:59.197013 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:44:59.199156 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:44:59.224595 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:44:59.233030 (MainThread): Parsing macros/core.sql
+2021-09-25 11:44:59.238876 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 11:44:59.250160 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:44:59.253291 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:44:59.280328 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:44:59.327144 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:44:59.352767 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 11:44:59.355253 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 11:44:59.362382 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 11:44:59.380149 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 11:44:59.389398 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 11:44:59.397007 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 11:44:59.403205 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 11:44:59.404636 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 11:44:59.406123 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 11:44:59.408230 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 11:44:59.419262 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 11:44:59.421914 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 11:44:59.424152 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 11:44:59.476410 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 11:44:59.480697 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 11:44:59.482805 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 11:44:59.485890 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 11:44:59.494997 (MainThread): Partial parsing not enabled
+2021-09-25 11:44:59.573472 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 11:44:59.596529 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 11:44:59.608481 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 11:44:59.621414 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 11:44:59.633200 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378ba97c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378daaf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe378daadf0>]}
+2021-09-25 11:44:59.633457 (MainThread): Flushing usage events
+2021-09-25 11:45:03.425722 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-25 11:45:03.425931 (MainThread): Encountered an error:
+2021-09-25 11:45:03.426079 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-25 11:45:03.431737 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-25 11:45:39.762350 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:45:39.866897 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-25 11:45:39.868631 (MainThread): Tracking: tracking
+2021-09-25 11:45:39.898472 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32cbb06d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32cbcc9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32cbd3190>]}
+2021-09-25 11:45:39.928266 (MainThread): Partial parsing not enabled
+2021-09-25 11:45:39.930117 (MainThread): Parsing macros/catalog.sql
+2021-09-25 11:45:39.934034 (MainThread): Parsing macros/adapters.sql
+2021-09-25 11:45:39.946578 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:45:39.950127 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:45:39.951725 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:45:39.976069 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:45:39.983157 (MainThread): Parsing macros/core.sql
+2021-09-25 11:45:39.987946 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-25 11:45:39.999516 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-25 11:45:40.001844 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-25 11:45:40.025887 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-25 11:45:40.065251 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-25 11:45:40.090905 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-25 11:45:40.094922 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-25 11:45:40.102184 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-25 11:45:40.118651 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-25 11:45:40.127323 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-25 11:45:40.134856 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-25 11:45:40.140644 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-25 11:45:40.142085 (MainThread): Parsing macros/etc/query.sql
+2021-09-25 11:45:40.144237 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-25 11:45:40.146716 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-25 11:45:40.158369 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-25 11:45:40.161777 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-25 11:45:40.164059 (MainThread): Parsing macros/adapters/common.sql
+2021-09-25 11:45:40.215775 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-25 11:45:40.218639 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-25 11:45:40.220884 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-25 11:45:40.223184 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-25 11:45:40.232702 (MainThread): Partial parsing not enabled
+2021-09-25 11:45:40.311872 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-25 11:45:40.334010 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-25 11:45:40.346257 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-25 11:45:40.360447 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-25 11:45:40.372363 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32cd589d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32ceb2ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff32ceb2d90>]}
+2021-09-25 11:45:40.372630 (MainThread): Flushing usage events
+2021-09-25 11:45:41.486377 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-25 11:45:41.486598 (MainThread): Encountered an error:
+2021-09-25 11:45:41.486770 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-25 11:45:41.494560 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/generate.py", line 213, in run
+    compile_results = CompileTask.run(self)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-25 11:45:50.317737 (MainThread): Running with dbt=0.19.0
+2021-09-25 11:45:50.420903 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-25 11:45:50.423148 (MainThread): Tracking: tracking
+2021-09-25 11:45:50.440986 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093c0ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093db8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093e30d0>]}
+2021-09-25 11:45:50.447828 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-25 11:45:50.448389 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-25 11:45:50.448689 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-25 11:45:50.451314 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093e3dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093e3d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa4093e3700>]}
+2021-09-25 11:45:50.451793 (MainThread): Flushing usage events
+2021-09-25 11:45:52.463308 (MainThread): Encountered an error:
+2021-09-25 11:45:52.463556 (MainThread): [Errno 48] Address already in use
+2021-09-25 11:45:52.467383 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+2021-09-26 10:38:40.089538 (MainThread): Running with dbt=0.19.0
+2021-09-26 10:38:40.169833 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-26 10:38:40.174637 (MainThread): Tracking: tracking
+2021-09-26 10:38:40.188301 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f3c21f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f3dc910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f3e4100>]}
+2021-09-26 10:38:40.215175 (MainThread): Partial parsing not enabled
+2021-09-26 10:38:40.217478 (MainThread): Parsing macros/catalog.sql
+2021-09-26 10:38:40.221429 (MainThread): Parsing macros/adapters.sql
+2021-09-26 10:38:40.232702 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 10:38:40.235605 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 10:38:40.236966 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 10:38:40.258382 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 10:38:40.264732 (MainThread): Parsing macros/core.sql
+2021-09-26 10:38:40.269568 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 10:38:40.280663 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 10:38:40.283144 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 10:38:40.307487 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 10:38:40.346607 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 10:38:40.370745 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 10:38:40.373127 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 10:38:40.380366 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 10:38:40.396860 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 10:38:40.405447 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 10:38:40.412809 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 10:38:40.418549 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 10:38:40.419921 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 10:38:40.421457 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 10:38:40.423706 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 10:38:40.434211 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 10:38:40.436762 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 10:38:40.439018 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 10:38:40.488241 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 10:38:40.490754 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 10:38:40.492867 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 10:38:40.495065 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 10:38:40.503856 (MainThread): Partial parsing not enabled
+2021-09-26 10:38:40.576250 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 10:38:40.597673 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 10:38:40.608980 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 10:38:40.620766 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 10:38:40.636776 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f44a6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f5a9ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe84f5a9dc0>]}
+2021-09-26 10:38:40.637067 (MainThread): Flushing usage events
+2021-09-26 10:38:41.824084 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 10:38:41.824276 (MainThread): Encountered an error:
+2021-09-26 10:38:41.824425 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-26 10:38:41.831333 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/generate.py", line 213, in run
+    compile_results = CompileTask.run(self)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-26 10:39:14.791533 (MainThread): Running with dbt=0.19.0
+2021-09-26 10:39:14.874521 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-26 10:39:14.876122 (MainThread): Tracking: tracking
+2021-09-26 10:39:14.890110 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693c16a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693dc8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693e40a0>]}
+2021-09-26 10:39:14.896797 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-26 10:39:14.897341 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-26 10:39:14.897510 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-26 10:39:14.898233 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693e4d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693e4d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc0693e46d0>]}
+2021-09-26 10:39:14.898503 (MainThread): Flushing usage events
+2021-09-26 10:39:15.995427 (MainThread): Encountered an error:
+2021-09-26 10:39:15.995625 (MainThread): [Errno 48] Address already in use
+2021-09-26 10:39:15.998612 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
