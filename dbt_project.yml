@@ -34,5 +34,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   sensor_project:
       # Applies to all files under models/example/
-      example:
+      traffic_data:
           materialized: view
