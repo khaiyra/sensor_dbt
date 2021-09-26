@@ -2691,3 +2691,1253 @@ dbt.exceptions.CompilationException: Compilation Error
     self.socket.bind(self.server_address)
 OSError: [Errno 48] Address already in use
 
+2021-09-26 21:26:17.632444 (MainThread): Running with dbt=0.19.0
+2021-09-26 21:26:17.783925 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 21:26:17.786440 (MainThread): Tracking: tracking
+2021-09-26 21:26:17.813732 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5ac29d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5adc8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5ae50d0>]}
+2021-09-26 21:26:17.851119 (MainThread): Partial parsing not enabled
+2021-09-26 21:26:17.853857 (MainThread): Parsing macros/catalog.sql
+2021-09-26 21:26:17.858230 (MainThread): Parsing macros/adapters.sql
+2021-09-26 21:26:17.872798 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 21:26:17.876384 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 21:26:17.878111 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 21:26:17.906630 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 21:26:17.916066 (MainThread): Parsing macros/core.sql
+2021-09-26 21:26:17.923298 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 21:26:17.944343 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 21:26:17.948433 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 21:26:17.977483 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 21:26:18.032601 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 21:26:18.069536 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 21:26:18.074203 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 21:26:18.083784 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 21:26:18.108035 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 21:26:18.117937 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 21:26:18.131400 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 21:26:18.140628 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 21:26:18.143531 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 21:26:18.145970 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 21:26:18.148381 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 21:26:18.161864 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 21:26:18.165097 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 21:26:18.167721 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 21:26:18.227031 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 21:26:18.229689 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 21:26:18.231821 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 21:26:18.234032 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 21:26:18.244469 (MainThread): Partial parsing not enabled
+2021-09-26 21:26:18.337787 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 21:26:18.369507 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 21:26:18.394433 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 21:26:18.416503 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 21:26:18.435344 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5c3ebe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5eb4550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e5eb45b0>]}
+2021-09-26 21:26:18.435651 (MainThread): Flushing usage events
+2021-09-26 21:26:20.664758 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 21:26:20.664952 (MainThread): Encountered an error:
+2021-09-26 21:26:20.665091 (MainThread): Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+2021-09-26 21:26:20.672178 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 62, in load_yaml_text
+    return safe_load(contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 57, in safe_load
+    return yaml.load(contents, Loader=YamlLoader)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 707, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 725, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 776, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 890, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 774, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 853, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml/_yaml.pyx", line 905, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 13, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 233, in _yaml_from_file
+    return load_yaml_text(source_file.contents)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/yaml_helper.py", line 69, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 53
+  ------------------------------
+  50 |           description: 'Occupancy 3'
+  51 | 
+  52 |     - name: stations
+  53 |     description: 'Table for Stations metadata'
+  54 |     columns:
+  55 |       - name: 'ID'
+  56 |         description: 'Unique identifier for a Station'
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 13, column 5
+  did not find expected '-' indicator
+    in "<unicode string>", line 53, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 563, in parse_file
+    dct = self._yaml_from_file(block.file)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 236, in _yaml_from_file
+    raise CompilationException(
+dbt.exceptions.CompilationException: Compilation Error
+  Error reading sensor_project: traffic_data/schema.yml - Runtime Error
+    Syntax error near line 53
+    ------------------------------
+    50 |           description: 'Occupancy 3'
+    51 | 
+    52 |     - name: stations
+    53 |     description: 'Table for Stations metadata'
+    54 |     columns:
+    55 |       - name: 'ID'
+    56 |         description: 'Unique identifier for a Station'
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 13, column 5
+    did not find expected '-' indicator
+      in "<unicode string>", line 53, column 5
+
+2021-09-26 21:34:45.724725 (MainThread): Running with dbt=0.19.0
+2021-09-26 21:34:45.866863 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 21:34:45.868975 (MainThread): Tracking: tracking
+2021-09-26 21:34:45.898986 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd03cde20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd03dc850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd03e4040>]}
+2021-09-26 21:34:45.969371 (MainThread): Partial parsing not enabled
+2021-09-26 21:34:45.975024 (MainThread): Parsing macros/catalog.sql
+2021-09-26 21:34:45.983097 (MainThread): Parsing macros/adapters.sql
+2021-09-26 21:34:46.005698 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 21:34:46.010232 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 21:34:46.011794 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 21:34:46.037616 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 21:34:46.045913 (MainThread): Parsing macros/core.sql
+2021-09-26 21:34:46.051475 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 21:34:46.063808 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 21:34:46.066943 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 21:34:46.090895 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 21:34:46.143041 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 21:34:46.173406 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 21:34:46.176297 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 21:34:46.185494 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 21:34:46.204076 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 21:34:46.214135 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 21:34:46.222529 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 21:34:46.229695 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 21:34:46.231404 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 21:34:46.233138 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 21:34:46.235568 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 21:34:46.247714 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 21:34:46.250612 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 21:34:46.253705 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 21:34:46.314342 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 21:34:46.317014 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 21:34:46.319039 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 21:34:46.321527 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 21:34:46.340460 (MainThread): Partial parsing not enabled
+2021-09-26 21:34:46.429978 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 21:34:46.457078 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 21:34:46.470775 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 21:34:46.483589 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 21:34:46.510097 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd0447850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd05aa340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefd05b5fd0>]}
+2021-09-26 21:34:46.510449 (MainThread): Flushing usage events
+2021-09-26 21:34:47.485517 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 21:34:47.485806 (MainThread): Encountered an error:
+2021-09-26 21:34:47.485967 (MainThread): Compilation Error
+  Invalid models config given in models/traffic_data/schema.yml @ models: {'name': 'station_summary', 'description': 'Summary of station details', 'columns': [{'name': 'ID', 'description': 'Unique identifier for a station', 'tests': '-unique -not_null'}, {'name': 'flow_99', 'description': 'Value for flow99'}, {'name': 'flow_max', 'description': 'Value for max traffic flow'}, {'name': 'flow_median', 'description': 'Value for median traffic flow'}, {'name': 'flow_total', 'description': 'Total traffic flow'}, {'name': 'n_obs', 'description': 'Value for n_obs'}], 'original_file_path': 'models/traffic_data/schema.yml', 'yaml_key': 'models', 'package_name': 'sensor_project'} - at path ['columns'][0]['tests']: '-unique -not_null' is not valid under any of the given schemas
+2021-09-26 21:34:47.492814 (MainThread): jsonschema.exceptions.ValidationError: '-unique -not_null' is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['properties']['columns']['items']['properties']['tests']:
+    {'oneOf': [{'items': {'oneOf': [{'type': 'object'},
+                                    {'type': 'string'}]},
+                'type': 'array'},
+               {'type': 'null'}]}
+
+On instance['columns'][0]['tests']:
+    '-unique -not_null'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 756, in get_unparsed_target
+    model = self._target_type().from_dict(data)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/contracts/util.py", line 74, in from_dict
+    self = super().from_dict(data=data, validate=validate)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/hologram/__init__.py", line 624, in from_dict
+    cls.validate(data)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/hologram/__init__.py", line 968, in validate
+    raise ValidationError.create_from(error) from error
+hologram.ValidationError: '-unique -not_null' is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['properties']['columns']['items']['properties']['tests']:
+    {'oneOf': [{'items': {'oneOf': [{'type': 'object'},
+                                    {'type': 'string'}]},
+                'type': 'array'},
+               {'type': 'null'}]}
+
+On instance['columns'][0]['tests']:
+    '-unique -not_null'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 594, in parse_file
+    for test_block in parser.parse():
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 735, in parse
+    for node in self.get_unparsed_target():
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/schemas.py", line 759, in get_unparsed_target
+    raise CompilationException(msg) from exc
+dbt.exceptions.CompilationException: Compilation Error
+  Invalid models config given in models/traffic_data/schema.yml @ models: {'name': 'station_summary', 'description': 'Summary of station details', 'columns': [{'name': 'ID', 'description': 'Unique identifier for a station', 'tests': '-unique -not_null'}, {'name': 'flow_99', 'description': 'Value for flow99'}, {'name': 'flow_max', 'description': 'Value for max traffic flow'}, {'name': 'flow_median', 'description': 'Value for median traffic flow'}, {'name': 'flow_total', 'description': 'Total traffic flow'}, {'name': 'n_obs', 'description': 'Value for n_obs'}], 'original_file_path': 'models/traffic_data/schema.yml', 'yaml_key': 'models', 'package_name': 'sensor_project'} - at path ['columns'][0]['tests']: '-unique -not_null' is not valid under any of the given schemas
+
+2021-09-26 22:07:16.149235 (MainThread): Running with dbt=0.19.0
+2021-09-26 22:07:16.253150 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 22:07:16.255073 (MainThread): Tracking: tracking
+2021-09-26 22:07:16.274230 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec793c2b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec793dd910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec793e5100>]}
+2021-09-26 22:07:16.302682 (MainThread): Partial parsing not enabled
+2021-09-26 22:07:16.305120 (MainThread): Parsing macros/catalog.sql
+2021-09-26 22:07:16.309161 (MainThread): Parsing macros/adapters.sql
+2021-09-26 22:07:16.320844 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 22:07:16.323864 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 22:07:16.325271 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 22:07:16.355530 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 22:07:16.363563 (MainThread): Parsing macros/core.sql
+2021-09-26 22:07:16.370895 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 22:07:16.382461 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 22:07:16.384858 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 22:07:16.406031 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 22:07:16.445876 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 22:07:16.470107 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 22:07:16.473996 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 22:07:16.482206 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 22:07:16.498359 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 22:07:16.506290 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 22:07:16.513719 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 22:07:16.519596 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 22:07:16.520929 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 22:07:16.522366 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 22:07:16.524468 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 22:07:16.534727 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 22:07:16.537267 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 22:07:16.539555 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 22:07:16.590219 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 22:07:16.592940 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 22:07:16.595677 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 22:07:16.598058 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 22:07:16.607209 (MainThread): Partial parsing not enabled
+2021-09-26 22:07:16.681214 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 22:07:16.704113 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 22:07:16.709799 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec79432130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec7957d250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fec79583d00>]}
+2021-09-26 22:07:16.710236 (MainThread): Flushing usage events
+2021-09-26 22:07:17.957445 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-26 22:07:17.957641 (MainThread): Encountered an error:
+2021-09-26 22:07:17.957792 (MainThread): Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  source() takes exactly two arguments (1 given)
+2021-09-26 22:07:17.965450 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 424, in parse_file
+    self.parse_node(file_block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 397, in parse_node
+    self.render_update(node, config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 372, in render_update
+    self.render_with_context(node, config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 288, in render_with_context
+    get_rendered(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/jinja.py", line 577, in get_rendered
+    return render_template(template, ctx, node)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/jinja.py", line 528, in render_template
+    return template.render(ctx)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 2, in top-level template code
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/sandbox.py", line 462, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/context/providers.py", line 249, in __call__
+    raise_compiler_error(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/exceptions.py", line 435, in raise_compiler_error
+    raise CompilationException(msg, node)
+dbt.exceptions.CompilationException: Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  source() takes exactly two arguments (1 given)
+
+2021-09-26 23:15:42.454754 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:15:42.561613 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 23:15:42.563827 (MainThread): Tracking: tracking
+2021-09-26 23:15:42.583327 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77bc26d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77bdd8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77be50a0>]}
+2021-09-26 23:15:42.635064 (MainThread): Partial parsing not enabled
+2021-09-26 23:15:42.637293 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:15:42.641549 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:15:42.652651 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:15:42.655524 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:15:42.656945 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:15:42.687302 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:15:42.694011 (MainThread): Parsing macros/core.sql
+2021-09-26 23:15:42.698862 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:15:42.711183 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:15:42.713620 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:15:42.736883 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:15:42.775759 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:15:42.800072 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:15:42.802512 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:15:42.809771 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:15:42.826720 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:15:42.834854 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:15:42.842422 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:15:42.848746 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:15:42.850261 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:15:42.851886 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:15:42.854264 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:15:42.865872 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:15:42.868405 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:15:42.870682 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:15:42.920920 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:15:42.923666 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:15:42.925742 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:15:42.927981 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:15:42.936968 (MainThread): Partial parsing not enabled
+2021-09-26 23:15:43.015334 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:15:43.038237 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:15:43.044440 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77c310a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77d7d1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce77d85ca0>]}
+2021-09-26 23:15:43.044711 (MainThread): Flushing usage events
+2021-09-26 23:15:44.235290 (MainThread): Connection 'model.sensor_project.station_summary' was properly closed.
+2021-09-26 23:15:44.235491 (MainThread): Encountered an error:
+2021-09-26 23:15:44.235641 (MainThread): Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  source() takes exactly two arguments (1 given)
+2021-09-26 23:15:44.247720 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 434, in load_all
+    loader.load(macro_manifest=macro_manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 282, in load
+    self.parse_project(project, macro_manifest, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 232, in parse_project
+    self.parse_with_cache(path, parser, old_results)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 183, in parse_with_cache
+    parser.parse_file(block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 424, in parse_file
+    self.parse_node(file_block)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 397, in parse_node
+    self.render_update(node, config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 372, in render_update
+    self.render_with_context(node, config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/base.py", line 288, in render_with_context
+    get_rendered(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/jinja.py", line 577, in get_rendered
+    return render_template(template, ctx, node)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/clients/jinja.py", line 528, in render_template
+    return template.render(ctx)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 2, in top-level template code
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/jinja2/sandbox.py", line 462, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/context/providers.py", line 249, in __call__
+    raise_compiler_error(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/exceptions.py", line 435, in raise_compiler_error
+    raise CompilationException(msg, node)
+dbt.exceptions.CompilationException: Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  source() takes exactly two arguments (1 given)
+
+2021-09-26 23:16:50.868344 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:16:50.951548 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 23:16:50.953020 (MainThread): Tracking: tracking
+2021-09-26 23:16:50.968330 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667bc2640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667bdd8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667be50a0>]}
+2021-09-26 23:16:50.997038 (MainThread): Partial parsing not enabled
+2021-09-26 23:16:50.998430 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:16:51.001971 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:16:51.012906 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:16:51.015408 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:16:51.016442 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:16:51.037509 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:16:51.043206 (MainThread): Parsing macros/core.sql
+2021-09-26 23:16:51.047569 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:16:51.058755 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:16:51.060815 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:16:51.083939 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:16:51.122152 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:16:51.145756 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:16:51.147846 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:16:51.154712 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:16:51.170620 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:16:51.178308 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:16:51.185309 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:16:51.190822 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:16:51.191917 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:16:51.193086 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:16:51.194875 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:16:51.204779 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:16:51.207103 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:16:51.209029 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:16:51.257608 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:16:51.259801 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:16:51.261496 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:16:51.263361 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:16:51.271980 (MainThread): Partial parsing not enabled
+2021-09-26 23:16:51.345107 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:16:51.367068 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:16:51.381720 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:16:51.393260 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:16:51.606718 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4146ad13-bd72-441d-8c06-06294ed0130c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667ff1880>]}
+2021-09-26 23:16:51.643649 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667d85100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667c4b2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff667c31760>]}
+2021-09-26 23:16:51.644119 (MainThread): Flushing usage events
+2021-09-26 23:16:52.617797 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 23:16:52.617997 (MainThread): Encountered an error:
+2021-09-26 23:16:52.618129 (MainThread): Found a cycle: model.sensor_project.station_summary
+2021-09-26 23:16:52.620616 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 80, in _runtime_initialize
+    self.compile_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 76, in compile_manifest
+    self.graph = compiler.compile(self.manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/compilation.py", line 465, in compile
+    self.link_graph(linker, manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/compilation.py", line 459, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.sensor_project.station_summary
+
+2021-09-26 23:25:20.974693 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:25:21.073083 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 23:25:21.075253 (MainThread): Tracking: tracking
+2021-09-26 23:25:21.092279 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe43c2820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe43dd8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe43e60d0>]}
+2021-09-26 23:25:21.120240 (MainThread): Partial parsing not enabled
+2021-09-26 23:25:21.122055 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:25:21.126259 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:25:21.137531 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:25:21.140519 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:25:21.141791 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:25:21.163325 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:25:21.169502 (MainThread): Parsing macros/core.sql
+2021-09-26 23:25:21.174422 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:25:21.185390 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:25:21.192581 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:25:21.220963 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:25:21.259946 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:25:21.284341 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:25:21.287417 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:25:21.298948 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:25:21.322584 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:25:21.330946 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:25:21.338489 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:25:21.344300 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:25:21.345694 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:25:21.347159 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:25:21.349299 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:25:21.359443 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:25:21.361939 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:25:21.364183 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:25:21.414914 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:25:21.419302 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:25:21.421405 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:25:21.423801 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:25:21.432987 (MainThread): Partial parsing not enabled
+2021-09-26 23:25:21.509707 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:25:21.533275 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:25:21.545356 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:25:21.556189 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:25:21.764398 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '70c68330-33e2-4ef9-bb20-6dd7963f9e76', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe47f0b20>]}
+2021-09-26 23:25:21.799778 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe4654f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe46b3670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdbe4546d60>]}
+2021-09-26 23:25:21.800066 (MainThread): Flushing usage events
+2021-09-26 23:25:22.949354 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 23:25:22.950697 (MainThread): Encountered an error:
+2021-09-26 23:25:22.950888 (MainThread): Found a cycle: model.sensor_project.station_summary
+2021-09-26 23:25:22.953718 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 80, in _runtime_initialize
+    self.compile_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 76, in compile_manifest
+    self.graph = compiler.compile(self.manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/compilation.py", line 465, in compile
+    self.link_graph(linker, manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/compilation.py", line 459, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.sensor_project.station_summary
+
+2021-09-26 23:30:37.825770 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:30:37.928871 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 23:30:37.931285 (MainThread): Tracking: tracking
+2021-09-26 23:30:37.947241 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f4b11f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f4cb910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f4d4100>]}
+2021-09-26 23:30:37.974956 (MainThread): Partial parsing not enabled
+2021-09-26 23:30:37.976742 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:30:37.980723 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:30:37.992314 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:30:37.995136 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:30:37.996491 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:30:38.018706 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:30:38.025168 (MainThread): Parsing macros/core.sql
+2021-09-26 23:30:38.030426 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:30:38.051170 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:30:38.053466 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:30:38.073711 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:30:38.111864 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:30:38.135660 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:30:38.138060 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:30:38.145075 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:30:38.161335 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:30:38.169536 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:30:38.176872 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:30:38.182567 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:30:38.183887 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:30:38.185658 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:30:38.187795 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:30:38.198127 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:30:38.200760 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:30:38.203036 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:30:38.252889 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:30:38.257073 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:30:38.259381 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:30:38.261764 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:30:38.270816 (MainThread): Partial parsing not enabled
+2021-09-26 23:30:38.344194 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:30:38.366845 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:30:38.379818 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:30:38.392873 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:30:38.572089 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f6747f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f679d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd11f666ee0>]}
+2021-09-26 23:30:38.572363 (MainThread): Flushing usage events
+2021-09-26 23:30:39.839768 (MainThread): Connection 'model.sensor_project.my_second_dbt_model' was properly closed.
+2021-09-26 23:30:39.839968 (MainThread): Encountered an error:
+2021-09-26 23:30:39.840120 (MainThread): Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  Model 'model.sensor_project.station_summary' (models/traffic_data/station_summary.sql) depends on a node named 'StationSummary' which was not found
+2021-09-26 23:30:39.844898 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/runnable.py", line 66, in load_manifest
+    self.manifest = get_full_manifest(self.config)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/perf_utils.py", line 28, in get_full_manifest
+    return load_manifest(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 854, in load_manifest
+    return ManifestLoader.load_all(config, macro_manifest, macro_hook)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 436, in load_all
+    manifest = loader.create_manifest()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 414, in create_manifest
+    self.process_manifest(manifest)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 380, in process_manifest
+    process_refs(manifest, project_name)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 750, in process_refs
+    _process_refs_for_node(manifest, current_project, node)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 732, in _process_refs_for_node
+    invalid_ref_fail_unless_test(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/parser/manifest.py", line 475, in invalid_ref_fail_unless_test
+    ref_target_not_found(
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/exceptions.py", line 566, in ref_target_not_found
+    raise_compiler_error(msg, model)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/exceptions.py", line 435, in raise_compiler_error
+    raise CompilationException(msg, node)
+dbt.exceptions.CompilationException: Compilation Error in model station_summary (models/traffic_data/station_summary.sql)
+  Model 'model.sensor_project.station_summary' (models/traffic_data/station_summary.sql) depends on a node named 'StationSummary' which was not found
+
+2021-09-26 23:36:43.421474 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:36:43.522033 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-09-26 23:36:43.524150 (MainThread): Tracking: tracking
+2021-09-26 23:36:43.539259 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1143c2640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1143dd910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1143e5100>]}
+2021-09-26 23:36:43.567280 (MainThread): Partial parsing not enabled
+2021-09-26 23:36:43.569252 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:36:43.573350 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:36:43.584481 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:36:43.587392 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:36:43.588845 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:36:43.610784 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:36:43.618214 (MainThread): Parsing macros/core.sql
+2021-09-26 23:36:43.623710 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:36:43.645563 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:36:43.647927 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:36:43.668888 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:36:43.710467 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:36:43.734684 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:36:43.738888 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:36:43.746734 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:36:43.763040 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:36:43.771708 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:36:43.779639 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:36:43.785404 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:36:43.786846 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:36:43.788390 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:36:43.790520 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:36:43.800623 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:36:43.803081 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:36:43.805289 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:36:43.854872 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:36:43.857466 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:36:43.859461 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:36:43.861601 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:36:43.870260 (MainThread): Partial parsing not enabled
+2021-09-26 23:36:43.945141 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:43.967794 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:43.980722 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:43.991646 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.208836 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '77ca67aa-c044-4a35-ad08-bb2b983f8cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1147f03d0>]}
+2021-09-26 23:36:44.251813 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-09-26 23:36:44.252451 (MainThread): Found 4 models, 4 tests, 0 snapshots, 0 analyses, 140 macros, 0 operations, 0 seed files, 1 source, 0 exposures
+2021-09-26 23:36:44.253514 (MainThread): 
+2021-09-26 23:36:44.253888 (MainThread): Acquiring new mysql connection "master".
+2021-09-26 23:36:44.259009 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "list_schemas".
+2021-09-26 23:36:44.268348 (ThreadPoolExecutor-0_0): Using mysql connection "list_schemas".
+2021-09-26 23:36:44.268509 (ThreadPoolExecutor-0_0): On list_schemas: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+2021-09-26 23:36:44.268597 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-09-26 23:36:44.299051 (ThreadPoolExecutor-0_0): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.348296 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status -1 in 0.08 seconds
+2021-09-26 23:36:44.351347 (ThreadPoolExecutor-0_0): On list_schemas: Close
+2021-09-26 23:36:44.361474 (ThreadPoolExecutor-1_0): Acquiring new mysql connection "list_None_sensor".
+2021-09-26 23:36:44.368896 (ThreadPoolExecutor-1_0): Using mysql connection "list_None_sensor".
+2021-09-26 23:36:44.369059 (ThreadPoolExecutor-1_0): On list_None_sensor: BEGIN
+2021-09-26 23:36:44.369167 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.390817 (ThreadPoolExecutor-1_0): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.392027 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status 0 in 0.02 seconds
+2021-09-26 23:36:44.392178 (ThreadPoolExecutor-1_0): Using mysql connection "list_None_sensor".
+2021-09-26 23:36:44.392280 (ThreadPoolExecutor-1_0): On list_None_sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_None_sensor"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'sensor'
+  
+2021-09-26 23:36:44.400152 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.01 seconds
+2021-09-26 23:36:44.401459 (ThreadPoolExecutor-1_0): On list_None_sensor: ROLLBACK
+2021-09-26 23:36:44.401869 (ThreadPoolExecutor-1_0): On list_None_sensor: Close
+2021-09-26 23:36:44.402622 (MainThread): Using mysql connection "master".
+2021-09-26 23:36:44.402749 (MainThread): On master: BEGIN
+2021-09-26 23:36:44.402833 (MainThread): Opening a new connection, currently in state init
+2021-09-26 23:36:44.424444 (MainThread): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.425738 (MainThread): SQL status: Unknown cursor state/status 0 in 0.02 seconds
+2021-09-26 23:36:44.425904 (MainThread): On master: COMMIT
+2021-09-26 23:36:44.425990 (MainThread): Using mysql connection "master".
+2021-09-26 23:36:44.426065 (MainThread): On master: COMMIT
+2021-09-26 23:36:44.427535 (MainThread): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.427691 (MainThread): On master: Close
+2021-09-26 23:36:44.428166 (MainThread): 00:36:44 | Concurrency: 1 threads (target='dev')
+2021-09-26 23:36:44.428319 (MainThread): 00:36:44 | 
+2021-09-26 23:36:44.430295 (Thread-1): Began running node model.sensor_project.my_first_dbt_model
+2021-09-26 23:36:44.431412 (Thread-1): 00:36:44 | 1 of 4 START table model sensor.my_first_dbt_model................... [RUN]
+2021-09-26 23:36:44.431775 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.433551 (Thread-1): Compiling model.sensor_project.my_first_dbt_model
+2021-09-26 23:36:44.451517 (Thread-1): Writing injected SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-26 23:36:44.453528 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.477457 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.477615 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `sensor`.`my_first_dbt_model__dbt_tmp`
+2021-09-26 23:36:44.477700 (Thread-1): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.500274 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.520139 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-26 23:36:44.522657 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.522789 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `sensor`.`my_first_dbt_model__dbt_backup`
+2021-09-26 23:36:44.524294 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.536113 (Thread-1): Writing runtime SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-26 23:36:44.537883 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.538006 (Thread-1): On model.sensor_project.my_first_dbt_model: BEGIN
+2021-09-26 23:36:44.538740 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.538863 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.538945 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+
+  create  table
+    `sensor`.`my_first_dbt_model__dbt_tmp`
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+
+2021-09-26 23:36:44.580120 (Thread-1): SQL status: Unknown cursor state/status 2 in 0.04 seconds
+2021-09-26 23:36:44.587984 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.588144 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+    drop table if exists `sensor`.`my_first_dbt_model` cascade
+  
+2021-09-26 23:36:44.589729 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.590735 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.590842 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+
+    rename table `sensor`.`my_first_dbt_model__dbt_tmp` to `sensor`.`my_first_dbt_model`
+  
+2021-09-26 23:36:44.600025 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.01 seconds
+2021-09-26 23:36:44.606399 (Thread-1): On model.sensor_project.my_first_dbt_model: COMMIT
+2021-09-26 23:36:44.606547 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.606629 (Thread-1): On model.sensor_project.my_first_dbt_model: COMMIT
+2021-09-26 23:36:44.607390 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.610918 (Thread-1): Using mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:36:44.611069 (Thread-1): On model.sensor_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_first_dbt_model"} */
+drop table if exists `sensor`.`my_first_dbt_model__dbt_backup`
+2021-09-26 23:36:44.612563 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.615945 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.616195 (Thread-1): On model.sensor_project.my_first_dbt_model: Close
+2021-09-26 23:36:44.616894 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77ca67aa-c044-4a35-ad08-bb2b983f8cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1145cee20>]}
+2021-09-26 23:36:44.618021 (Thread-1): 00:36:44 | 1 of 4 OK created table model sensor.my_first_dbt_model.............. [Unknown cursor state/status 2 in 0.19s]
+2021-09-26 23:36:44.618158 (Thread-1): Finished running node model.sensor_project.my_first_dbt_model
+2021-09-26 23:36:44.618379 (Thread-1): Began running node model.sensor_project.station_summary
+2021-09-26 23:36:44.619572 (Thread-1): 00:36:44 | 2 of 4 START table model sensor.station_summary...................... [RUN]
+2021-09-26 23:36:44.620096 (Thread-1): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.621848 (Thread-1): Compiling model.sensor_project.station_summary
+2021-09-26 23:36:44.629577 (Thread-1): Writing injected SQL for node "model.sensor_project.station_summary"
+2021-09-26 23:36:44.630439 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.637408 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.637568 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+drop table if exists `sensor`.`station_summary__dbt_tmp`
+2021-09-26 23:36:44.637674 (Thread-1): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.659684 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.662768 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.03 seconds
+2021-09-26 23:36:44.665068 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.665184 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+drop table if exists `sensor`.`station_summary__dbt_backup`
+2021-09-26 23:36:44.666784 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.668040 (Thread-1): Writing runtime SQL for node "model.sensor_project.station_summary"
+2021-09-26 23:36:44.668867 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.668978 (Thread-1): On model.sensor_project.station_summary: BEGIN
+2021-09-26 23:36:44.669604 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.669718 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.669797 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+
+
+  create  table
+    `sensor`.`station_summary__dbt_tmp`
+  as (
+    
+
+SELECT * FROM sensor.StationSummary
+  )
+
+2021-09-26 23:36:44.681956 (Thread-1): SQL status: Unknown cursor state/status 49 in 0.01 seconds
+2021-09-26 23:36:44.685253 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.685454 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+
+    drop table if exists `sensor`.`station_summary` cascade
+  
+2021-09-26 23:36:44.688868 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.689851 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.689950 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+
+    rename table `sensor`.`station_summary__dbt_tmp` to `sensor`.`station_summary`
+  
+2021-09-26 23:36:44.696844 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.01 seconds
+2021-09-26 23:36:44.698030 (Thread-1): On model.sensor_project.station_summary: COMMIT
+2021-09-26 23:36:44.698143 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.698220 (Thread-1): On model.sensor_project.station_summary: COMMIT
+2021-09-26 23:36:44.698768 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.700644 (Thread-1): Using mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:36:44.700765 (Thread-1): On model.sensor_project.station_summary: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_summary"} */
+drop table if exists `sensor`.`station_summary__dbt_backup`
+2021-09-26 23:36:44.702169 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.704471 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.704725 (Thread-1): On model.sensor_project.station_summary: Close
+2021-09-26 23:36:44.705459 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77ca67aa-c044-4a35-ad08-bb2b983f8cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1145e0190>]}
+2021-09-26 23:36:44.706695 (Thread-1): 00:36:44 | 2 of 4 OK created table model sensor.station_summary................. [Unknown cursor state/status 49 in 0.09s]
+2021-09-26 23:36:44.706853 (Thread-1): Finished running node model.sensor_project.station_summary
+2021-09-26 23:36:44.706999 (Thread-1): Began running node model.sensor_project.my_second_dbt_model
+2021-09-26 23:36:44.708087 (Thread-1): 00:36:44 | 3 of 4 START view model sensor.my_second_dbt_model................... [RUN]
+2021-09-26 23:36:44.708566 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.710408 (Thread-1): Compiling model.sensor_project.my_second_dbt_model
+2021-09-26 23:36:44.717334 (Thread-1): Writing injected SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-26 23:36:44.717888 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.741247 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.742787 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `sensor`.`my_second_dbt_model__dbt_tmp`
+2021-09-26 23:36:44.743054 (Thread-1): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.773117 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.779596 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.04 seconds
+2021-09-26 23:36:44.782346 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.782498 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `sensor`.`my_second_dbt_model__dbt_backup`
+2021-09-26 23:36:44.783831 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.788168 (Thread-1): Writing runtime SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-26 23:36:44.788838 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.788989 (Thread-1): On model.sensor_project.my_second_dbt_model: BEGIN
+2021-09-26 23:36:44.789765 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.789906 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.789983 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+  create view `sensor`.`my_second_dbt_model__dbt_tmp` as (
+    -- Use the `ref` function to select from other models
+
+select *
+from `sensor`.`my_first_dbt_model`
+where id = 1
+  );
+
+2021-09-26 23:36:44.793677 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.797153 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.797313 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+    drop view if exists `sensor`.`my_second_dbt_model` cascade
+  
+2021-09-26 23:36:44.798763 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.799841 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.799953 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+
+    rename table `sensor`.`my_second_dbt_model__dbt_tmp` to `sensor`.`my_second_dbt_model`
+  
+2021-09-26 23:36:44.802673 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.804088 (Thread-1): On model.sensor_project.my_second_dbt_model: COMMIT
+2021-09-26 23:36:44.804239 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.804315 (Thread-1): On model.sensor_project.my_second_dbt_model: COMMIT
+2021-09-26 23:36:44.804941 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.806788 (Thread-1): Using mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:36:44.806914 (Thread-1): On model.sensor_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.my_second_dbt_model"} */
+drop view if exists `sensor`.`my_second_dbt_model__dbt_backup`
+2021-09-26 23:36:44.808094 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.810663 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.810950 (Thread-1): On model.sensor_project.my_second_dbt_model: Close
+2021-09-26 23:36:44.811698 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77ca67aa-c044-4a35-ad08-bb2b983f8cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1148e34c0>]}
+2021-09-26 23:36:44.812756 (Thread-1): 00:36:44 | 3 of 4 OK created view model sensor.my_second_dbt_model.............. [Unknown cursor state/status 0 in 0.10s]
+2021-09-26 23:36:44.812895 (Thread-1): Finished running node model.sensor_project.my_second_dbt_model
+2021-09-26 23:36:44.813064 (Thread-1): Began running node model.sensor_project.station_model2
+2021-09-26 23:36:44.814064 (Thread-1): 00:36:44 | 4 of 4 START view model sensor.station_model2........................ [RUN]
+2021-09-26 23:36:44.814384 (Thread-1): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.816141 (Thread-1): Compiling model.sensor_project.station_model2
+2021-09-26 23:36:44.822807 (Thread-1): Writing injected SQL for node "model.sensor_project.station_model2"
+2021-09-26 23:36:44.823353 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.829836 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.830006 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+drop view if exists `sensor`.`station_model2__dbt_tmp`
+2021-09-26 23:36:44.830093 (Thread-1): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.852144 (Thread-1): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.854834 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.02 seconds
+2021-09-26 23:36:44.857270 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.857393 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+drop view if exists `sensor`.`station_model2__dbt_backup`
+2021-09-26 23:36:44.858676 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.859800 (Thread-1): Writing runtime SQL for node "model.sensor_project.station_model2"
+2021-09-26 23:36:44.860257 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.860350 (Thread-1): On model.sensor_project.station_model2: BEGIN
+2021-09-26 23:36:44.860954 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.861066 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.861142 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+
+  create view `sensor`.`station_model2__dbt_tmp` as (
+    select * 
+from `sensor`.`station_summary`
+where ID = 1
+  );
+
+2021-09-26 23:36:44.865142 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.869634 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.869792 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+
+    drop view if exists `sensor`.`station_model2` cascade
+  
+2021-09-26 23:36:44.871115 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.872135 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.872247 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+
+    rename table `sensor`.`station_model2__dbt_tmp` to `sensor`.`station_model2`
+  
+2021-09-26 23:36:44.874872 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.876008 (Thread-1): On model.sensor_project.station_model2: COMMIT
+2021-09-26 23:36:44.876121 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.876203 (Thread-1): On model.sensor_project.station_model2: COMMIT
+2021-09-26 23:36:44.876780 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.878693 (Thread-1): Using mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:36:44.878815 (Thread-1): On model.sensor_project.station_model2: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "node_id": "model.sensor_project.station_model2"} */
+drop view if exists `sensor`.`station_model2__dbt_backup`
+2021-09-26 23:36:44.880066 (Thread-1): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.882615 (Thread-1): finished collecting timing info
+2021-09-26 23:36:44.882864 (Thread-1): On model.sensor_project.station_model2: Close
+2021-09-26 23:36:44.883575 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '77ca67aa-c044-4a35-ad08-bb2b983f8cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1145dcc40>]}
+2021-09-26 23:36:44.884809 (Thread-1): 00:36:44 | 4 of 4 OK created view model sensor.station_model2................... [Unknown cursor state/status 0 in 0.07s]
+2021-09-26 23:36:44.884996 (Thread-1): Finished running node model.sensor_project.station_model2
+2021-09-26 23:36:44.886196 (MainThread): Acquiring new mysql connection "master".
+2021-09-26 23:36:44.887947 (MainThread): Using mysql connection "master".
+2021-09-26 23:36:44.888072 (MainThread): On master: BEGIN
+2021-09-26 23:36:44.888155 (MainThread): Opening a new connection, currently in state closed
+2021-09-26 23:36:44.909055 (MainThread): new_auth_plugin: caching_sha2_password
+2021-09-26 23:36:44.911075 (MainThread): SQL status: Unknown cursor state/status 0 in 0.02 seconds
+2021-09-26 23:36:44.911256 (MainThread): On master: COMMIT
+2021-09-26 23:36:44.911339 (MainThread): Using mysql connection "master".
+2021-09-26 23:36:44.911412 (MainThread): On master: COMMIT
+2021-09-26 23:36:44.911951 (MainThread): SQL status: Unknown cursor state/status 0 in 0.00 seconds
+2021-09-26 23:36:44.912082 (MainThread): On master: Close
+2021-09-26 23:36:44.912515 (MainThread): 00:36:44 | 
+2021-09-26 23:36:44.912653 (MainThread): 00:36:44 | Finished running 2 table models, 2 view models in 0.66s.
+2021-09-26 23:36:44.912754 (MainThread): Connection 'master' was properly closed.
+2021-09-26 23:36:44.912844 (MainThread): Connection 'model.sensor_project.station_model2' was properly closed.
+2021-09-26 23:36:44.957338 (MainThread): 
+2021-09-26 23:36:44.957507 (MainThread): Completed successfully
+2021-09-26 23:36:44.957635 (MainThread): 
+Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+2021-09-26 23:36:44.957830 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1144e2100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1145a5670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb11444b0a0>]}
+2021-09-26 23:36:44.958044 (MainThread): Flushing usage events
+2021-09-26 23:37:17.294547 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:37:17.376842 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.generate.GenerateTask'>, compile=True, debug=False, defer=None, exclude=None, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method='docs.generate', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, vars='{}', version_check=True, warn_error=False, which='generate', write_json=True)
+2021-09-26 23:37:17.378774 (MainThread): Tracking: tracking
+2021-09-26 23:37:17.398310 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf723a66d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf723c08b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf723c90a0>]}
+2021-09-26 23:37:17.426311 (MainThread): Partial parsing not enabled
+2021-09-26 23:37:17.427778 (MainThread): Parsing macros/catalog.sql
+2021-09-26 23:37:17.431611 (MainThread): Parsing macros/adapters.sql
+2021-09-26 23:37:17.442708 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:37:17.445199 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:37:17.446239 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:37:17.467707 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:37:17.473418 (MainThread): Parsing macros/core.sql
+2021-09-26 23:37:17.478245 (MainThread): Parsing macros/materializations/helpers.sql
+2021-09-26 23:37:17.490156 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-09-26 23:37:17.492612 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-09-26 23:37:17.512791 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-09-26 23:37:17.552366 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-09-26 23:37:17.576126 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-09-26 23:37:17.578440 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-09-26 23:37:17.585602 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-09-26 23:37:17.601414 (MainThread): Parsing macros/materializations/table/table.sql
+2021-09-26 23:37:17.609072 (MainThread): Parsing macros/materializations/view/view.sql
+2021-09-26 23:37:17.616194 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-09-26 23:37:17.621730 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-09-26 23:37:17.622988 (MainThread): Parsing macros/etc/query.sql
+2021-09-26 23:37:17.624219 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-09-26 23:37:17.626056 (MainThread): Parsing macros/etc/datetime.sql
+2021-09-26 23:37:17.636205 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-09-26 23:37:17.638539 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-09-26 23:37:17.640462 (MainThread): Parsing macros/adapters/common.sql
+2021-09-26 23:37:17.690870 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-09-26 23:37:17.694998 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-09-26 23:37:17.696866 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-09-26 23:37:17.699214 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-09-26 23:37:17.707954 (MainThread): Partial parsing not enabled
+2021-09-26 23:37:17.779303 (MainThread): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:37:17.801370 (MainThread): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:37:17.812635 (MainThread): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:37:17.823145 (MainThread): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:37:18.033025 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '35973cfc-9316-49bd-9c22-1f485826783f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf726ccb20>]}
+2021-09-26 23:37:18.072081 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-09-26 23:37:18.072564 (MainThread): Found 4 models, 4 tests, 0 snapshots, 0 analyses, 140 macros, 0 operations, 0 seed files, 1 source, 0 exposures
+2021-09-26 23:37:18.073718 (MainThread): 
+2021-09-26 23:37:18.074099 (MainThread): Acquiring new mysql connection "master".
+2021-09-26 23:37:18.083455 (ThreadPoolExecutor-0_0): Acquiring new mysql connection "list_None_sensor".
+2021-09-26 23:37:18.092650 (ThreadPoolExecutor-0_0): Using mysql connection "list_None_sensor".
+2021-09-26 23:37:18.092803 (ThreadPoolExecutor-0_0): On list_None_sensor: BEGIN
+2021-09-26 23:37:18.092890 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-09-26 23:37:18.117931 (ThreadPoolExecutor-0_0): new_auth_plugin: caching_sha2_password
+2021-09-26 23:37:18.119264 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status 0 in 0.03 seconds
+2021-09-26 23:37:18.119425 (ThreadPoolExecutor-0_0): Using mysql connection "list_None_sensor".
+2021-09-26 23:37:18.119508 (ThreadPoolExecutor-0_0): On list_None_sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "list_None_sensor"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'sensor'
+  
+2021-09-26 23:37:18.121268 (ThreadPoolExecutor-0_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-26 23:37:18.131544 (ThreadPoolExecutor-0_0): On list_None_sensor: ROLLBACK
+2021-09-26 23:37:18.133902 (ThreadPoolExecutor-0_0): On list_None_sensor: Close
+2021-09-26 23:37:18.137387 (MainThread): 00:37:18 | Concurrency: 1 threads (target='dev')
+2021-09-26 23:37:18.137691 (MainThread): 00:37:18 | 
+2021-09-26 23:37:18.141526 (Thread-1): Began running node model.sensor_project.my_first_dbt_model
+2021-09-26 23:37:18.142175 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_first_dbt_model".
+2021-09-26 23:37:18.144008 (Thread-1): Compiling model.sensor_project.my_first_dbt_model
+2021-09-26 23:37:18.162332 (Thread-1): Writing injected SQL for node "model.sensor_project.my_first_dbt_model"
+2021-09-26 23:37:18.162865 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.163138 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.163539 (Thread-1): Finished running node model.sensor_project.my_first_dbt_model
+2021-09-26 23:37:18.163678 (Thread-1): Began running node model.sensor_project.station_summary
+2021-09-26 23:37:18.163904 (Thread-1): Acquiring new mysql connection "model.sensor_project.station_summary".
+2021-09-26 23:37:18.164115 (Thread-1): Compiling model.sensor_project.station_summary
+2021-09-26 23:37:18.171750 (Thread-1): Writing injected SQL for node "model.sensor_project.station_summary"
+2021-09-26 23:37:18.172312 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.172650 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.173093 (Thread-1): Finished running node model.sensor_project.station_summary
+2021-09-26 23:37:18.173247 (Thread-1): Began running node model.sensor_project.my_second_dbt_model
+2021-09-26 23:37:18.173824 (Thread-1): Acquiring new mysql connection "model.sensor_project.my_second_dbt_model".
+2021-09-26 23:37:18.173981 (Thread-1): Compiling model.sensor_project.my_second_dbt_model
+2021-09-26 23:37:18.181598 (Thread-1): Writing injected SQL for node "model.sensor_project.my_second_dbt_model"
+2021-09-26 23:37:18.182079 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.182328 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.182708 (Thread-1): Finished running node model.sensor_project.my_second_dbt_model
+2021-09-26 23:37:18.182842 (Thread-1): Began running node test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-26 23:37:18.183188 (Thread-1): Acquiring new mysql connection "test.sensor_project.not_null_my_first_dbt_model_id".
+2021-09-26 23:37:18.183402 (Thread-1): Compiling test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-26 23:37:18.200326 (Thread-1): Writing injected SQL for node "test.sensor_project.not_null_my_first_dbt_model_id"
+2021-09-26 23:37:18.201223 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.201522 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.201924 (Thread-1): Finished running node test.sensor_project.not_null_my_first_dbt_model_id
+2021-09-26 23:37:18.202064 (Thread-1): Began running node test.sensor_project.unique_my_first_dbt_model_id
+2021-09-26 23:37:18.202448 (Thread-1): Acquiring new mysql connection "test.sensor_project.unique_my_first_dbt_model_id".
+2021-09-26 23:37:18.202598 (Thread-1): Compiling test.sensor_project.unique_my_first_dbt_model_id
+2021-09-26 23:37:18.209951 (Thread-1): Writing injected SQL for node "test.sensor_project.unique_my_first_dbt_model_id"
+2021-09-26 23:37:18.210906 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.211214 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.211609 (Thread-1): Finished running node test.sensor_project.unique_my_first_dbt_model_id
+2021-09-26 23:37:18.211759 (Thread-1): Began running node model.sensor_project.station_model2
+2021-09-26 23:37:18.212223 (Thread-1): Acquiring new mysql connection "model.sensor_project.station_model2".
+2021-09-26 23:37:18.212354 (Thread-1): Compiling model.sensor_project.station_model2
+2021-09-26 23:37:18.218803 (Thread-1): Writing injected SQL for node "model.sensor_project.station_model2"
+2021-09-26 23:37:18.219330 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.219593 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.219981 (Thread-1): Finished running node model.sensor_project.station_model2
+2021-09-26 23:37:18.220115 (Thread-1): Began running node test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-26 23:37:18.220342 (Thread-1): Acquiring new mysql connection "test.sensor_project.not_null_my_second_dbt_model_id".
+2021-09-26 23:37:18.220524 (Thread-1): Compiling test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-26 23:37:18.227470 (Thread-1): Writing injected SQL for node "test.sensor_project.not_null_my_second_dbt_model_id"
+2021-09-26 23:37:18.228088 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.228385 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.228813 (Thread-1): Finished running node test.sensor_project.not_null_my_second_dbt_model_id
+2021-09-26 23:37:18.228966 (Thread-1): Began running node test.sensor_project.unique_my_second_dbt_model_id
+2021-09-26 23:37:18.229427 (Thread-1): Acquiring new mysql connection "test.sensor_project.unique_my_second_dbt_model_id".
+2021-09-26 23:37:18.229558 (Thread-1): Compiling test.sensor_project.unique_my_second_dbt_model_id
+2021-09-26 23:37:18.236741 (Thread-1): Writing injected SQL for node "test.sensor_project.unique_my_second_dbt_model_id"
+2021-09-26 23:37:18.237318 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.237601 (Thread-1): finished collecting timing info
+2021-09-26 23:37:18.237989 (Thread-1): Finished running node test.sensor_project.unique_my_second_dbt_model_id
+2021-09-26 23:37:18.238858 (MainThread): Connection 'master' was properly closed.
+2021-09-26 23:37:18.238969 (MainThread): Connection 'test.sensor_project.unique_my_second_dbt_model_id' was properly closed.
+2021-09-26 23:37:18.276804 (MainThread): 00:37:18 | Done.
+2021-09-26 23:37:18.281652 (MainThread): Acquiring new mysql connection "generate_catalog".
+2021-09-26 23:37:18.281809 (MainThread): 00:37:18 | Building catalog
+2021-09-26 23:37:18.307511 (ThreadPoolExecutor-1_0): Acquiring new mysql connection "sensor".
+2021-09-26 23:37:18.307845 (ThreadPoolExecutor-1_0): Getting table schema for relation `sensor`.`my_first_dbt_model`
+2021-09-26 23:37:18.313693 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.313886 (ThreadPoolExecutor-1_0): On sensor: BEGIN
+2021-09-26 23:37:18.314116 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state init
+2021-09-26 23:37:18.337734 (ThreadPoolExecutor-1_0): new_auth_plugin: caching_sha2_password
+2021-09-26 23:37:18.339055 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status 0 in 0.02 seconds
+2021-09-26 23:37:18.339209 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.339292 (ThreadPoolExecutor-1_0): On sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "sensor"} */
+
+        show columns from sensor.my_first_dbt_model
+    
+2021-09-26 23:37:18.345242 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.01 seconds
+2021-09-26 23:37:18.348468 (ThreadPoolExecutor-1_0): Getting table schema for relation `sensor`.`my_second_dbt_model`
+2021-09-26 23:37:18.350288 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.350418 (ThreadPoolExecutor-1_0): On sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "sensor"} */
+
+        show columns from sensor.my_second_dbt_model
+    
+2021-09-26 23:37:18.352608 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-26 23:37:18.353492 (ThreadPoolExecutor-1_0): Getting table schema for relation `sensor`.`station_model2`
+2021-09-26 23:37:18.355278 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.355450 (ThreadPoolExecutor-1_0): On sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "sensor"} */
+
+        show columns from sensor.station_model2
+    
+2021-09-26 23:37:18.357660 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-26 23:37:18.359365 (ThreadPoolExecutor-1_0): Getting table schema for relation `sensor`.`station_summary`
+2021-09-26 23:37:18.360875 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.360970 (ThreadPoolExecutor-1_0): On sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "sensor"} */
+
+        show columns from sensor.station_summary
+    
+2021-09-26 23:37:18.362493 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-26 23:37:18.364131 (ThreadPoolExecutor-1_0): Getting table schema for relation `sensor`.`StationSummary`
+2021-09-26 23:37:18.365770 (ThreadPoolExecutor-1_0): Using mysql connection "sensor".
+2021-09-26 23:37:18.365867 (ThreadPoolExecutor-1_0): On sensor: /* {"app": "dbt", "dbt_version": "0.19.0", "profile_name": "sql", "target_name": "dev", "connection_name": "sensor"} */
+
+        show columns from sensor.StationSummary
+    
+2021-09-26 23:37:18.367486 (ThreadPoolExecutor-1_0): SQL status: Unknown cursor state/status -1 in 0.00 seconds
+2021-09-26 23:37:18.370075 (ThreadPoolExecutor-1_0): On sensor: ROLLBACK
+2021-09-26 23:37:18.370489 (ThreadPoolExecutor-1_0): On sensor: Close
+2021-09-26 23:37:18.414651 (MainThread): 00:37:18 | Catalog written to /Users/khaiyra/Documents/10academy/week11/target/catalog.json
+2021-09-26 23:37:18.414941 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf723a66d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf72755be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf72755fa0>]}
+2021-09-26 23:37:18.415186 (MainThread): Flushing usage events
+2021-09-26 23:37:19.415032 (MainThread): Connection 'generate_catalog' was properly closed.
+2021-09-26 23:37:19.415201 (MainThread): Connection 'sensor' was properly closed.
+2021-09-26 23:37:28.688141 (MainThread): Running with dbt=0.19.0
+2021-09-26 23:37:28.785442 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.serve.ServeTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', open_browser=True, partial_parse=None, port=8080, profile=None, profiles_dir='/Users/khaiyra/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, vars='{}', warn_error=False, which='serve', write_json=True)
+2021-09-26 23:37:28.787352 (MainThread): Tracking: tracking
+2021-09-26 23:37:28.807542 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f824025cee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8240276940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f824027f130>]}
+2021-09-26 23:37:28.814425 (MainThread): Serving docs at 0.0.0.0:8080
+2021-09-26 23:37:28.815839 (MainThread): To access from your browser, navigate to:  http://localhost:8080
+2021-09-26 23:37:28.817134 (MainThread): Press Ctrl+C to exit.
+
+
+2021-09-26 23:37:28.818828 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f824027fe20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f824027fdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f824027f760>]}
+2021-09-26 23:37:28.819257 (MainThread): Flushing usage events
+2021-09-26 23:37:29.745338 (MainThread): Encountered an error:
+2021-09-26 23:37:29.745529 (MainThread): [Errno 48] Address already in use
+2021-09-26 23:37:29.749564 (MainThread): Traceback (most recent call last):
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/main.py", line 256, in run_from_args
+    results = task.run()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/site-packages/dbt/task/serve.py", line 29, in run
+    httpd = TCPServer(  # type: ignore
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Users/khaiyra/opt/anaconda3/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+

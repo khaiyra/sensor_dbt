@@ -1,7 +1,7 @@
 
 
   create  table
-    `schema`.`my_first_dbt_model__dbt_tmp`
+    `sensor`.`my_first_dbt_model__dbt_tmp`
   as (
     /*
     Welcome to your first dbt model!
