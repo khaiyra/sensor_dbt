@@ -2,7 +2,7 @@
 version: 2
 
 sources: 
-  - name: traffic_data_models
+  - name: traffic_data
     description: 'Data base for traffic DWH'
     schema: sensor
     tables:
