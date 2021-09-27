@@ -1,15 +1,8 @@
-Welcome to your new dbt project!
+# Sensor Data Warehouse with DBT, Airflow and MySQL
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+This project aims to build an ELT pipeline in which the transformations in the datawarehouse are carried using models created in dbt. TO create a scalable data warehouse tech-stack that will help provide AI service.
 
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- [Installing dbt](https://docs.getdbt.com/dbt-cli/installation/#pip)
